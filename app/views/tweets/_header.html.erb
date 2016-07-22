@@ -1,0 +1,16 @@
+<form id="socmed-picker">
+  <label><input type="radio" name="socmed-content" value="tweet" checked>tweet</label>
+  <label><input type="radio" name="socmed-content" value="status">fb status</label>
+</form>
+
+<form action="<%= tweets_path %>" method="get" id="search-form">
+  <div>
+    <%= text_field_tag :query, params[:query], id: "query", placeholder: "Find tweets" %>
+    <%= button_tag(type: "submit", id: "submit", name: nil) do %>
+      Find
+    <% end %>
+    first
+    <%= number_field_tag :num, params[:num], id: "num", min: 1, max: 300 %>
+    tweets
+  </div>
+</form>

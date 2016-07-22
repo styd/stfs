@@ -1,0 +1,238 @@
+// Place all the styles related to the tweets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$dark-grey: #333333;
+$gold: #DAA520;
+
+html, body {
+  height: 100%;
+}
+
+form {
+  display: inline-block;
+}
+
+#socmed-picker {
+  float: right;
+  margin-top: 3em;
+  margin-left: 3em;
+  display: inline;
+
+  label {
+    display: inline;
+    vertical-align: text-top;
+  }
+}
+
+#search-form {
+  margin-top: 3em;
+  margin-bottom: 1em;
+}
+
+#query {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-kerning: auto;
+  letter-spacing: 1px;
+  word-spacing: 3px;
+  padding: 6px 10px;
+  border-radius: 3px;
+  border: 1px solid lighten($dark-grey, 50%);
+  width: 260px;
+
+  @media only screen and (min-width : 320px) {
+    font-size: 2em;
+  }
+
+  @media only screen and (min-width : 768px) {
+    font-size: 1em;
+  }
+}
+
+#submit {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 6px 14px;
+  background-color: #f4f4f4;
+  color: #555555;
+  width: 60px;
+  border-radius: 2px;
+  border: none;
+  display: inline-block;
+  font-size: 14px;
+  box-shadow: 0 1px 1px 1px rgba(#000000, 0.3);
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #ffffff;
+  }
+
+  &:active {
+    background-color: #f0f0f0;
+    box-shadow: inset 0 1px 1px 1px rgba(#000000, 0.3);
+  }
+
+  &:disabled {
+    background-color: #aaaaaa;
+    box-shadow: 0 1px 1px rgba(#000000, 0.1);
+  }
+}
+
+#num {
+  width: 60px;
+  padding: 3px 5px;
+  text-align: center;
+}
+
+#toggle {
+  text-align: center;
+  padding: 3px 8px;
+  background-color: #f4f4f4;
+  color: #555555;
+  border-radius: 2px;
+  border: none;
+  display: inline-block;
+  font-size: 12px;
+  width: 70px;
+  box-shadow: 0 1px 1px 1px rgba(#000000, 0.3);
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #ffffff;
+  }
+
+  &:active {
+    background-color: #f0f0f0;
+    box-shadow: inset 0 1px 1px 1px rgba(#000000, 0.3);
+  }
+}
+
+#cooked {
+  margin: 10px 0 20px 0;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 2px 3px 2px rgba(#000000, 0.3);
+  overflow-y: scroll;
+  color: $dark-grey;
+  height: 800px;
+
+  @media only screen and (min-width : 320px) {
+    height: 800px;
+  }
+
+  @media only screen and (min-width : 768px) {
+    height: 400px;
+  }
+
+  .a-tweet {
+    padding: 10px 10px 1px 10px;
+    border-radius: 3px;
+    border-left: 3px solid white;
+    width: 100%;
+    display: flex;
+    transition: border 0.2s ease;
+    -webkit-transition: border 0.2s ease;
+
+    .profile-image {
+      border-radius: 2px;
+      padding: 4px 10px 4px 0;
+      width: 68px;
+
+      img {
+        filter: blur(1px) grayscale(60%);
+        -webkit-filter: blur(1px) grayscale(60%);
+        transition: filter 0.4s ease;
+        -webkit-transition: -webkit-filter 0.4s ease;
+      }
+    }
+
+    .tweet-content {
+      width: 100%;
+    }
+
+    .name {
+      font-weight: bolder;
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+
+    .screen-name {
+    }
+
+    .created-at {
+      font-size: 12px;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      -webkit-transition: opacity 0.2s ease;
+    }
+
+    .from {
+      color: lighten($dark-grey, 50%);
+      font-style: italic;
+
+      a {
+        font-style: normal;
+        text-decoration: none;
+      }
+    }
+
+    .text {
+      padding: 6px 0 1px 0;
+    }
+
+    .hashtag {
+      color: $gold;
+    }
+
+    &:hover {
+      border-left: 3px solid rgba($gold,0.7);
+      background-color: rgba($gold, 0.08);
+
+      .profile-image img {
+        filter: blur(0) grayscale(0);
+        -webkit-filter: blur(0) grayscale(0);
+      }
+
+      .created-at {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+#raw {
+  margin: 10px 0 20px 0;
+  border-radius: 5px;
+
+  pre {
+    max-height: 400px;
+    background-color: #333;
+    color: $gold;
+  }
+}
+
+#author {
+  text-align: center;
+  font-size: 12px;
+
+  #love {
+    font-size: 16px;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+hr {
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 2px;
+  border-width: 2px;
+}
