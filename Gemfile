@@ -21,6 +21,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'twitter' # to fetch tweets by query
 gem 'awesome_print' # print fetch tweet data prettily
 gem 'bootstrap-sass'
+gem 'omniauth-facebook' # to get authentication from facebook
+gem 'koala' # to fetch data through Facebook Graph API
 
 
 # Use jquery as the JavaScript library

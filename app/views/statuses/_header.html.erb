@@ -1,0 +1,31 @@
+<div>
+  <% if current_user %>
+    <div id="logged-in">
+      Signed in as <strong><%= current_user.name %></strong>!
+      <%= link_to "Log out", signout_path, id: "log-out" %>
+    </div>
+  <% else %>
+    <div id="logged-out">
+      <%= link_to "Log in to Facebook", "/auth/facebook", id: "log-in" %>
+    </div>
+  <% end %>
+</div>
+
+<form id="socmed-picker">
+  <label><input type="radio" name="socmed-content" class="socmed-content"
+    value="<%= tweets_path %>">tweet</label>
+  <label><input type="radio" name="socmed-content" class="socmed-content"
+    value="<%= statuses_path %>" checked>fb status</label>
+</form>
+
+<form action="<%= statuses_path %>" method="get" id="search-form">
+  <div>
+    <%= text_field_tag :query, params[:query], id: "query", placeholder: "Find my friends' statuses" %>
+    <%= button_tag(type: "submit", id: "submit", name: nil, onclick: "FB.login()") do %>
+      Find
+    <% end %>
+    first
+    <%= number_field_tag :num, params[:num], id: "num", min: 1, max: 300 %>
+    statuses
+  </div>
+</form>

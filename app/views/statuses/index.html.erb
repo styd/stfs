@@ -7,11 +7,11 @@
 
   <div class="row result">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
-    <% if @tweets %>
+    <% if @statuses %>
       <strong>Search Results:</strong>
       <button id="toggle" style="float: right;">RAW</button>
       <div id="cooked">
-        <% @tweets.each do |tweet| %>
+        <% @statuses.each do |tweet| %>
           <div class="a-tweet-or-status" style="cursor: pointer;"
             onclick="openTweet('<%= tweet.user.screen_name %>', '<%= tweet.id %>');">
 
@@ -20,7 +20,7 @@
                 <img src="<%= tweet.user.profile_image_url_https %>" alt="<%= tweet.user.name %>'s profile image">
               </a>
             </div>
-            <div class="tweet-content">
+            <div class="status-content">
               <span class="name">
                 <a href="https://twitter.com/<%= tweet.user.screen_name %>" rel="nofollow" target="_blank">
                   <%= tweet.user.name %>
@@ -42,6 +42,7 @@
       </div>
 
       <div id="raw">
+        <% prettify_hash(@raw) %>
         <%= prettify_hash(@raw) %>
       </div>
 
