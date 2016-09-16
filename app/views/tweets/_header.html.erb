@@ -1,10 +1,3 @@
-<form id="socmed-picker" class="pusher">
-  <label><input type="radio" name="socmed-content" class="socmed-content"
-    value="<%= tweets_path %>" checked>tweet</label>
-  <label><input type="radio" name="socmed-content" class="socmed-content"
-    value="<%= statuses_path %>">fb status</label>
-</form>
-
 <form action="<%= tweets_path %>" method="get" id="search-form" class="pusher">
   <div>
     <%= text_field_tag :query, params[:query], id: "query", placeholder: "Find tweets" %>

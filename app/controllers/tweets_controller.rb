@@ -5,7 +5,7 @@ class TweetsController < ApplicationController
     end
 
     if params[:query]
-      @tweets = Tweet.search(params[:num].to_i, params[:query])
+      @tweets = Tweet.search(params[:query], params[:num].to_i)
       @raw = Tweet.raw
     end
   end

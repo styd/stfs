@@ -11,7 +11,7 @@ end
 describe 'Viewing list of tweets search results' do
   before :each do
     visit tweets_url
-    fill_in "query", with: "trump"
+    fill_in "query", with: "google"
     click_button "Find"
   end
 
@@ -19,7 +19,7 @@ describe 'Viewing list of tweets search results' do
     expect(page).to have_text("Search Results:")
   end
 
-  it 'shows the keyword' do
-    expect(page).to have_text(/trump/i)
+  it 'shows the keyword in text' do
+    expect(page).to have_text(/search/i)
   end
 end

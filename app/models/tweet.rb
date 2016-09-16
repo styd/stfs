@@ -12,7 +12,7 @@ class Tweet < ApplicationRecord
 
   @@client = client
 
-  def self.search how_many, query, options = {result_type: 'recent'}
+  def self.search query, how_many = 25, options = {result_type: 'recent'}
     @@tweets = @@client.search(query, options).take(how_many).collect do |tweet|
       tweet
     end

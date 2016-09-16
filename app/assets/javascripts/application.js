@@ -42,12 +42,6 @@ function disableFind(){
 }
 
 $(document).ready(function(){
-  $(function() {
-      $('.socmed-content:not(:checked)').on('change', function() {
-          window.location.href = $(this).val();
-      });
-  });
-
   disableFind();
   $('#query').on('keyup', function(){
     disableFind();
